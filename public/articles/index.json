@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "the-shortlist",
+    "title": "How ChatGPT and Gemini decide which hotels exist",
+    "kicker": "Discovery",
+    "companies": ["OpenAI", "Google", "Agoda"],
+    "cover": "covers/the-shortlist.svg",
+    "hook": "A third of travellers in India already plan trips with AI and nearly nine in ten trust what it tells them. Five out of six hotels cannot be read by it at all.",
+    "readingTime": "2 min, then 7"
+  },
+  {
+    "slug": "the-free-page",
+    "title": "Google's AI Mode sends 79% of hotel clicks to one free page",
+    "kicker": "Where the clicks go",
+    "companies": ["Google", "Apple", "Booking.com"],
+    "cover": "covers/the-free-page.svg",
+    "hook": "Travel sites supply nearly half the citations in Google's AI answers and receive under 4% of the visits. The page that takes the click costs nothing and you already own it.",
+    "readingTime": "2 min, then 6"
+  },
+  {
+    "slug": "agentic-booking",
+    "title": "Google and Amadeus built agentic booking. Independents were left off the list.",
+    "kicker": "Booking",
+    "companies": ["Google", "Amadeus", "OpenAI", "MakeMyTrip"],
+    "cover": "covers/agentic-booking.svg",
+    "hook": "Under 1% of hotel bookings come through AI and only 8% of travellers would let it book for them. But in August the plumbing was laid, and it runs through reservation platforms rather than hotels.",
+    "readingTime": "2 min, then 7"
+  },
+  {
+    "slug": "a-buyer-with-no-hands",
+    "title": "Mastercard's agentic payment move, and the wall it hits",
+    "kicker": "Payments",
+    "companies": ["Mastercard", "Visa", "Google", "Amex", "NPCI"],
+    "cover": "covers/a-buyer-with-no-hands.svg",
+    "hook": "Visa, Mastercard and Google have built ways for software to pay on a person's behalf. None of it buys a hotel room in India, and the reason is a number rather than a technology.",
+    "readingTime": "2 min, then 7"
+  },
+  {
+    "slug": "paperwork-not-welcome",
+    "title": "UIDAI and FHRAI just ended the photocopy at check-in",
+    "kicker": "Arrival",
+    "companies": ["UIDAI", "FHRAI"],
+    "cover": "covers/paperwork-not-welcome.svg",
+    "hook": "Digital identity became legally usable at check-in in April, and the hotel association told its members to adopt it in June. Guests, meanwhile, want the forms gone and the person kept.",
+    "readingTime": "2 min, then 5"
+  },
+  {
+    "slug": "nine-things",
+    "title": "What Airbnb, OpenAI and Google actually shipped",
+    "kicker": "Straight talk",
+    "companies": ["Airbnb", "OpenAI", "Google", "Visa"],
+    "cover": "covers/nine-things.svg",
+    "hook": "Nine claims about AI in hotels that the evidence does not support — including several that would have made our own case more persuasive.",
+    "readingTime": "2 min, then 6"
+  }
+]

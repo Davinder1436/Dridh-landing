@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Seventy-nine per cent of hotel clicks flowing to a business profile, 3.6 per cent to travel sites">
+<rect width="1200" height="675" fill="#F5F3EB"/>
+<defs><marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1A3E2A"/></marker>
+<marker id="c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#A9613C"/></marker></defs>
+<rect x="70" y="286" width="230" height="96" rx="4" fill="none" stroke="#1A3E2A" stroke-width="2"/>
+<text x="185" y="330" text-anchor="middle" font-family="Georgia, serif" font-size="25" fill="#1A3E2A">AI answer</text>
+<text x="185" y="358" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" fill="#1A3E2A" opacity=".7">hotel query</text>
+<path d="M300 318 C 420 318, 440 214, 560 214" stroke="#A9613C" stroke-width="14" fill="none" marker-end="url(#c)" opacity=".92"/>
+<path d="M300 352 C 420 352, 440 470, 560 470" stroke="#1A3E2A" stroke-width="3" fill="none" marker-end="url(#b)" opacity=".55"/>
+<rect x="590" y="150" width="520" height="130" rx="4" fill="#A9613C"/>
+<text x="620" y="200" font-family="Georgia, serif" font-size="40" fill="#F5F3EB">79%</text>
+<text x="620" y="234" font-family="Georgia, serif" font-size="23" fill="#F5F3EB">your Google Business Profile</text>
+<text x="620" y="262" font-family="IBM Plex Mono, monospace" font-size="15" letter-spacing="2" fill="#F5F3EB" opacity=".85">FREE · YOU ALREADY OWN IT</text>
+<rect x="590" y="418" width="520" height="104" rx="4" fill="none" stroke="#1A3E2A" stroke-width="1.5" opacity=".6"/>
+<text x="620" y="462" font-family="Georgia, serif" font-size="29" fill="#1A3E2A" opacity=".75">3.6%</text>
+<text x="620" y="494" font-family="Georgia, serif" font-size="20" fill="#1A3E2A" opacity=".75">travel sites — 46.6% of the citations</text>
+<text x="70" y="96" font-family="IBM Plex Mono, monospace" font-size="20" letter-spacing="3" fill="#A9613C">WHERE THE CLICKS GO</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="A stack of identity photocopies replaced by a single verified digital credential">
+<rect width="1200" height="675" fill="#F5F3EB"/>
+<defs><marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#A9613C"/></marker></defs>
+<text x="80" y="96" font-family="IBM Plex Mono, monospace" font-size="20" letter-spacing="3" fill="#A9613C">UIDAI · APRIL 2026 &#160;&#160;·&#160;&#160; FHRAI · JUNE 2026</text>
+<g opacity=".4">
+<rect x="96" y="216" width="230" height="150" rx="3" fill="none" stroke="#1A3E2A" stroke-width="2" transform="rotate(-7 211 291)"/>
+<rect x="86" y="200" width="230" height="150" rx="3" fill="none" stroke="#1A3E2A" stroke-width="2" transform="rotate(3 201 275)"/>
+<rect x="80" y="188" width="230" height="150" rx="3" fill="#F5F3EB" stroke="#1A3E2A" stroke-width="2"/>
+<line x1="106" y1="232" x2="230" y2="232" stroke="#1A3E2A" stroke-width="7"/>
+<line x1="106" y1="260" x2="278" y2="260" stroke="#1A3E2A" stroke-width="5" opacity=".6"/>
+<line x1="106" y1="284" x2="250" y2="284" stroke="#1A3E2A" stroke-width="5" opacity=".6"/>
+<line x1="106" y1="308" x2="266" y2="308" stroke="#1A3E2A" stroke-width="5" opacity=".6"/>
+</g>
+<line x1="96" y1="356" x2="300" y2="180" stroke="#A9613C" stroke-width="4"/>
+<text x="80" y="418" font-family="Georgia, serif" font-size="22" fill="#1A3E2A" opacity=".7">photocopies in a drawer</text>
+<line x1="380" y1="270" x2="480" y2="270" stroke="#A9613C" stroke-width="3" marker-end="url(#g)"/>
+<rect x="540" y="168" width="250" height="196" rx="14" fill="none" stroke="#1A3E2A" stroke-width="2.5"/>
+<rect x="600" y="152" width="130" height="12" rx="6" fill="#1A3E2A"/>
+<circle cx="665" cy="252" r="46" fill="none" stroke="#A9613C" stroke-width="4"/>
+<path d="M644 252 l15 17 l30 -36" fill="none" stroke="#A9613C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="665" y="330" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" letter-spacing="2" fill="#1A3E2A">VERIFIED</text>
+<text x="540" y="418" font-family="Georgia, serif" font-size="22" fill="#1A3E2A">a credential, legally valid</text>
+<text x="80" y="540" font-family="Georgia, serif" font-size="29" font-style="italic" fill="#1A3E2A">Automate the paperwork.</text>
+<text x="80" y="586" font-family="Georgia, serif" font-size="29" font-style="italic" fill="#A9613C">Never the welcome.</text>
+</svg>
