@@ -1,5 +1,4 @@
 import { SITE } from '../config'
-import BookButton from './BookButton'
 import EraBackdrop from '../era/EraBackdrop'
 
 const SIGNALS = [
@@ -27,8 +26,7 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions">
-          <BookButton className="btn btn-primary btn-lg">Book a 15-minute call</BookButton>
-          <a className="btn btn-ghost btn-lg" href="#shift">
+          <a className="btn btn-primary btn-lg" href="#shift">
             See what is changing
           </a>
           <a className="btn btn-ghost btn-lg" href={`mailto:${SITE.email}`}>

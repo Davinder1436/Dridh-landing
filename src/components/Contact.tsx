@@ -15,29 +15,6 @@ export default function Contact() {
               stand with the systems that decide which hotels get recommended.
             </p>
 
-            <ul className="contact-list">
-              <li>
-                <span className="k">Call length</span>
-                <span>Fifteen minutes. Nothing to prepare, and no deck.</span>
-              </li>
-              <li>
-                <span className="k">You get</span>
-                <span>
-                  A read on how your property appears to AI assistants today, and an honest view on
-                  whether we are the right people for you.
-                </span>
-              </li>
-              <li>
-                <span className="k">Where</span>
-                <span>
-                  Remote anywhere in India, or in person across Himachal, Uttarakhand and Pune.
-                </span>
-              </li>
-              <li>
-                <span className="k">Languages</span>
-                <span>English and Hindi.</span>
-              </li>
-            </ul>
           </div>
 
           <div className="contact-card">

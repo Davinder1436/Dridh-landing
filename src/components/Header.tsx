@@ -5,7 +5,6 @@ import BookButton from './BookButton'
 
 const NAV = [
   { to: '/#shift', label: 'The shift' },
-  { to: '/reading', label: 'Reading' },
   { to: '/#offer', label: 'What we do' },
   { to: '/#product', label: 'Dridh PMS' },
   { to: '/#contact', label: 'Contact' },
@@ -59,7 +58,7 @@ export default function Header() {
     <header className={cls}>
       <div className="header-inner">
         <Link className="brand" to="/" aria-label="Dridh — home">
-          <img src={`${import.meta.env.BASE_URL}dridh-logo.svg`} alt="" width={120} height={80} />
+          <img src={`${import.meta.env.BASE_URL}dridh-logo@2x.png`} alt="" width={100} height={54} />
           <span className="brand-name">Dridh</span>
         </Link>
 
@@ -72,9 +71,12 @@ export default function Header() {
             ))}
           </div>
           <div className="header-actions">
-            <a className="btn btn-ghost btn-sm" href={`mailto:${SITE.email}`}>
+            <a className="btn btn-ghost btn-sm hide-sm" href={`mailto:${SITE.email}`}>
               Email us
             </a>
+            <Link className="btn btn-ghost btn-sm" to="/reading">
+              Reading
+            </Link>
             <BookButton className="btn btn-primary btn-sm">Book 15 minutes</BookButton>
           </div>
         </nav>

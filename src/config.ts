@@ -20,6 +20,19 @@ export const SITE = {
     url: '',
   },
 
+  /** Used by the built-in date + slot picker when no external scheduler is set. */
+  booking: {
+    tzLabel: 'IST',
+    durationMins: 15,
+    daysAhead: 21,
+    /** 0 = Sunday … 6 = Saturday */
+    workingDays: [1, 2, 3, 4, 5, 6],
+    slots: [
+      '10:00', '10:30', '11:00', '11:30', '12:00', '12:30',
+      '15:00', '15:30', '16:00', '16:30', '17:00', '17:30',
+    ],
+  },
+
   calendarFallbackSubject: 'Intro call — 15 minutes',
   calendarFallbackBody:
     'Hello Dridh team,\n\nI would like to book a 15-minute call about our property.\n\n' +

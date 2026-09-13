@@ -21,12 +21,37 @@ Three placeholders are deliberate and visible:
 |---|---|---|
 | **15-minute booking link** | `src/config.ts` → `SITE.scheduling` | Not connected yet, so every "book a slot" button falls back to a pre-filled email draft rather than being dead. See **Connecting the calendar** below. |
 | **Osho Himalayas founder quote** | `src/components/Product.tsx` | Lorem ipsum, marked on screen with an amber "Placeholder — awaiting approved quote" flag so it cannot ship by accident. Replace the text and the attribution, then delete the `placeholder-flag` span. |
-| **Logo file** | `public/dridh-logo.svg` | This is the supplied SVG, which is a **raster PNG wrapped in SVG** (377 KB, two masked layers). It renders correctly but is heavy for a logo and will not stay crisp at large sizes. Worth requesting a true vector, or exporting a 2× PNG at the sizes actually used (54 px and 42 px tall). |
+| **Logo file** | `public/dridh-logo@2x.png` | Rebuilt from the supplied SVG — see **Logo** below. Still raster; a true vector would be better if the designer can supply one. |
+
+## Logo
+
+The supplied `design-assets/dridh-logo.svg` is a **raster PNG wrapped in SVG**: a greyscale mask
+layer plus an RGB colour layer matted on black. Rendered directly it produced a visible **white
+halo**, because the partially transparent mask edges let the colour layer's matte bleed through,
+and it sat small in its box because of a large transparent margin.
+
+It was rebuilt into a clean RGBA PNG:
+
+1. alpha taken from the mask layer,
+2. colour un-matted against its black backing (`fg = observed / alpha`), which removes the fringe,
+3. the transparent margin trimmed, so the mark fills its own box and renders larger at the same
+   CSS height.
+
+Output: `public/dridh-logo.png` (1030×557 master) and `public/dridh-logo@2x.png` (414×224, used by
+the site at 54 px and 46 px tall). To regenerate after a new export, repeat those three steps —
+the halo returns if the raw layers are composited without the un-matte.
+
+Still raster, so a genuine vector remains the better long-term asset.
 
 ## Connecting the calendar
 
-Every "book a slot" button opens an in-page dialog with a real booking calendar. Configure it in
-one place:
+Every "book a slot" button opens an in-page dialog. **Out of the box this shows the built-in date
+and slot picker** — a calendar of the next three weeks, time slots for the chosen day, and a short
+form (name, email, property, phone).
+
+Because there is no backend, that picker cannot see a real calendar: it sends a booking *request*
+by email, which you confirm. For live availability and automatic calendar writes, point it at a
+hosted scheduler instead and the dialog embeds that in place of the picker:
 
 ```ts
 // src/config.ts
@@ -36,8 +61,8 @@ scheduling: {
 },
 ```
 
-Until that is set the buttons stay live and fall back to a pre-filled email draft — they are never
-dead links.
+Until that is set, the built-in picker is used. Its working days, hours, slot times, duration and
+timezone label live in `SITE.booking` in the same file.
 
 ### Recommended: Cal.com
 

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
-import { SITE, embedUrl, mailtoHref } from '../config'
+import { embedUrl } from '../config'
+import SlotPicker from './SlotPicker'
 import { useScheduler } from './SchedulerContext'
 
 /** Accessible dialog hosting whichever booking page is configured. */
@@ -79,21 +80,7 @@ export default function SchedulerModal() {
               allow="camera; microphone; fullscreen; clipboard-write"
             />
           ) : (
-            <div className="sched-fallback">
-              <p>
-                Online booking is not connected yet. Send a note and we will reply with two or
-                three times that suit you, usually the same day.
-              </p>
-              <div className="sched-fallback-actions">
-                <a className="btn btn-primary btn-lg" href={mailtoHref()}>
-                  Email {SITE.email}
-                </a>
-              </div>
-              <p className="small" style={{ marginTop: '18px', marginBottom: 0 }}>
-                Developer note: set <code>SITE.scheduling</code> in <code>src/config.ts</code> to
-                embed a real calendar here.
-              </p>
-            </div>
+            <SlotPicker onDone={close} />
           )}
         </div>
       </div>

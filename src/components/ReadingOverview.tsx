@@ -12,7 +12,7 @@ export default function ReadingOverview() {
   }, [])
 
   return (
-    <section id="reading" className="section-rule">
+    <section id="reading" className="reading-band">
       <div className="wrap">
         <div className="section-head">
           <span className="kicker">Reading</span>
@@ -39,7 +39,7 @@ export default function ReadingOverview() {
 
         {index.length > 3 && (
           <div className="reading-more">
-            <Link className="btn btn-ghost btn-lg" to="/reading">
+            <Link className="btn btn-on-copper btn-lg" to="/reading">
               All {index.length} articles <span aria-hidden="true">→</span>
             </Link>
           </div>
