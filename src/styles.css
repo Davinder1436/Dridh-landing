@@ -525,20 +525,29 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .btn-on-copper { background: var(--ground); color: var(--secondary); border-color: var(--ground); }
 .btn-on-copper:hover { background: #fff; color: var(--secondary); }
 
-/* ---------- product in copper -------------------------------------------- */
-.product-copper { background: var(--secondary); }
-.product-copper h2, .product-copper h3, .product-copper h4,
-.product-copper p, .product-copper .lede { color: var(--ground); }
-.product-copper .kicker { color: var(--ground); opacity: .85; }
-.product-copper .product-item { border-top-color: rgba(245, 243, 235, .32); }
-.product-copper .product-item p { color: rgba(245, 243, 235, .9); }
-.product-copper .review { border-color: rgba(245, 243, 235, .34); background: rgba(245, 243, 235, .07); }
-.product-copper .review .kicker,
-.product-copper .review blockquote,
-.product-copper .review-by div { color: var(--ground); }
-.product-copper .review-by strong { color: #fff; }
-.product-copper .review-by .dash { background: var(--ground); }
-.product-copper .placeholder-flag { background: var(--ground); color: var(--secondary); }
+/* ---------- product on ground -------------------------------------------- */
+.product-ground { background: var(--ground); color: var(--ink); }
+.product-ground h2, .product-ground h3, .product-ground h4 { color: var(--primary); }
+.product-ground p, .product-ground .lede { color: var(--ink); }
+.product-ground .kicker { color: var(--secondary); }
+.product-ground a { color: var(--secondary); }
+.product-ground .product-item { border-top-color: var(--rule-strong); }
+.product-ground .product-item h4 { color: var(--primary); }
+.product-ground .product-item p { color: var(--ink); }
+.product-ground .review { border-color: var(--rule-strong); background: var(--surface-warm); }
+.product-ground .review .kicker { color: var(--secondary); }
+.product-ground .review blockquote { color: var(--primary); }
+.product-ground .review-by div { color: var(--ink-soft); }
+.product-ground .review-by strong { color: var(--primary); }
+.product-ground .review-by .dash { background: var(--secondary); }
+.product-ground .placeholder-flag { background: var(--secondary); color: #fff; }
+
+/* ---------- contact in copper -------------------------------------------- */
+.contact-copper { background: var(--secondary); }
+.contact-copper h2, .contact-copper .lede { color: var(--ground); }
+.contact-copper .kicker { color: var(--ground); opacity: .85; }
+/* the card stays light so the email and buttons read as they do elsewhere */
+.contact-copper .contact-card { border-color: rgba(245, 243, 235, .3); }
 
 /* ---------- date + slot picker ------------------------------------------- */
 .hide-sm { display: inline-flex; }

@@ -19,7 +19,7 @@ const CAPABILITIES = [
 
 export default function Product() {
   return (
-    <section id="product" className="product product-copper">
+    <section id="product" className="product product-ground section-rule">
       <div className="wrap">
         <div className="section-head">
           <span className="kicker">Dridh PMS · Version 1</span>

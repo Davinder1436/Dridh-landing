@@ -3,7 +3,7 @@ import BookButton from './BookButton'
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-rule">
+    <section id="contact" className="contact-copper">
       <div className="wrap">
         <div className="contact-grid">
           <div>

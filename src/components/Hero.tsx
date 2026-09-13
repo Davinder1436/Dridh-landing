@@ -15,14 +15,11 @@ export default function Hero() {
       <div className="wrap">
         <span className="kicker">Hospitality systems · built for what comes next</span>
         <h1>
-          The modern foundation your hospitality business needs in the{' '}
+          The foundation your hospitality business needs to harness the{' '}
           <span className="accent">AI era</span>.
         </h1>
         <p className="lede">
-          Your guests have already started asking machines where to stay. Dridh rebuilds what sits
-          underneath your property — reservations, direct bookings, guest conversation and the
-          books — so you are found, quoted and booked in that world, without changing how you run
-          your hotel tomorrow morning.
+          Your guests have already started asking machines where to stay. We build the systems that make your property legible to those machines.
         </p>
 
         <div className="hero-actions">
