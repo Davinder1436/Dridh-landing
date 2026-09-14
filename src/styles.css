@@ -318,11 +318,11 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 #offer .wrap { position: relative; z-index: 1; }
 /* beach holds the right side, level with point 01 */
 .era-offer-beach {
-  right: -4%; top: 14%; width: min(36%, 440px);
+  right: calc(-4% + 1cm); top: 14%; width: min(40%, 480px);
 }
-/* burj sits down the right side, against the middle of points 02 and 03 */
+/* burj sits down the left side, against the middle of points 02 and 03 */
 .era-offer-burj {
-  right: -3%; top: 55%; width: min(48%, 600px);
+  left: -3%; top: 55%; width: min(24%, 300px);
 }
 @media (max-width: 1000px) { .era-offer-beach, .era-offer-burj { opacity: .55; } }
 @media (max-width: 700px)  { .era-offer-beach, .era-offer-burj { display: none; } }
@@ -330,10 +330,11 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 /* ---------- product backdrop (front desk) --------------------------------- */
 #product { position: relative; }
 #product .wrap { position: relative; z-index: 1; }
-/* front desk holds the top right, a little below the heading — like the
-   hero's yoga piece, which hangs top-right of its own section */
+/* front desk holds the top right, up in the section's top padding band
+   so it clears the heading and lede — like the hero's yoga piece,
+   which hangs top-right of its own section */
 .era-product-desk {
-  right: 0%; top: 9%; width: min(36%, 440px);
+  right: 2cm; top: 0; width: min(54%, 660px);
 }
 @media (max-width: 1000px) { .era-product-desk { opacity: .55; } }
 @media (max-width: 700px)  { .era-product-desk { display: none; } }
@@ -512,15 +513,24 @@ section { padding-block: clamp(64px, 9vw, 132px); }
   .sched-body iframe { min-height: 480px; }
 }
 
-/* ---------- era backdrop (decorative, reveals from the bottom-left) ------- */
+/* ---------- era backdrop (plain images; only .animated moves) ------------ */
 .era-backdrop {
   position: absolute; z-index: 0;
   pointer-events: none; user-select: none; overflow: hidden;
 }
+.era-backdrop img { width: 100%; height: 100%; display: block; object-fit: contain; }
 .era-backdrop svg { width: 100%; height: 100%; display: block; }
 
-/* the reveal: bottom-left to top-right, both axes advancing together */
+/* hero yoga artwork only: bottom-left reveal + ambient drift */
 @keyframes era-grow { from { transform: scale(.06) } to { transform: scale(1) } }
+@keyframes era-drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, -8px, 0); } }
+@media (prefers-reduced-motion: no-preference) {
+  .era-backdrop.animated .era-reveal {
+    transform-box: view-box; transform-origin: 0% 100%;
+    animation: era-grow 5s cubic-bezier(.35,.15,.6,.9) both;
+  }
+  .era-backdrop.animated svg { animation: era-drift 28s ease-in-out infinite alternate; }
+}
 
 /* the hero holds the backdrop; its own content must sit above it */
 .hero { position: relative; }
@@ -539,40 +549,21 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 @media (max-width: 1000px) { .era-hero-camel { opacity: .55; left: -10%; width: 44%; } }
 @media (max-width: 700px)  { .era-hero-camel { display: none; } }
 
-/* ambient life: every era illustration breathes almost imperceptibly once
-   revealed — a few pixels over half a minute, so it stays out of the
-   spotlight while still contributing to the scene */
-@media (prefers-reduced-motion: no-preference) {
-  .era-backdrop.revealed svg { animation: era-drift 28s ease-in-out infinite alternate; }
-}
-@keyframes era-drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, -8px, 0); } }
+
 
 /* ---------- shift section (fold 2) ---------------------------------------- */
 #shift { position: relative; }
 #shift .wrap { position: relative; z-index: 1; }
 /* main visual: sunrise holds the upper right, like the hero's feature art */
 .era-shift {
-  right: -5%; top: 6%; width: min(52%, 620px);
+  right: -5%; top: calc(6% - 2cm); width: min(52%, 620px);
 }
-/* secondary piece: dumbbell + towel sits fully visible along the bottom left,
-   a slow travel through the section rather than a static corner */
+/* secondary piece: dumbbell + towel sits fully visible along the bottom left */
 .era-shift-drift {
   left: -2%; bottom: 4%; width: min(44%, 560px);
 }
-@media (prefers-reduced-motion: no-preference) {
-  .era-shift-drift.revealed svg { animation: era-pan 38s ease-in-out infinite alternate; }
-}
-@keyframes era-pan {
-  from { transform: translate3d(-12px, 5px, 0); }
-  to { transform: translate3d(12px, -5px, 0); }
-}
-/* corner piece: dumbbell + towel tucked into the bottom right,
-   just before the reading band begins */
-.era-shift-corner {
-  right: -3%; bottom: 0; width: min(28%, 320px);
-}
-@media (max-width: 1000px) { .era-shift, .era-shift-drift, .era-shift-corner { opacity: .55; } }
-@media (max-width: 700px)  { .era-shift, .era-shift-drift, .era-shift-corner { display: none; } }
+@media (max-width: 1000px) { .era-shift, .era-shift-drift { opacity: .55; } }
+@media (max-width: 700px)  { .era-shift, .era-shift-drift { display: none; } }
 
 
 /* ---------- reading band (copper) ---------------------------------------- */

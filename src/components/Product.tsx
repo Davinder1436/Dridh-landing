@@ -66,7 +66,7 @@ export default function Product() {
           <div className="review-by">
             <span className="dash" aria-hidden="true" />
             <div>
-              <strong>Lorem Ipsum</strong>
+              <strong>Rajiv</strong>
               Founder, Osho Himalayas
             </div>
           </div>

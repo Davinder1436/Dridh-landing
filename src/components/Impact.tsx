@@ -32,7 +32,6 @@ export default function Impact() {
       <section id="shift" className="section-rule">
         <EraBackdrop src="era/fold2/sunrise-fold2.svg" className="era-shift" aspect="563.25 / 429" />
         <EraBackdrop src="era/fold2/dumbbell-towel-fold2.svg" className="era-shift-drift" aspect="618.75 / 366" opacity={0.16} />
-        <EraBackdrop src="era/fold2/dumbbell-towel-fold2.svg" className="era-shift-corner" aspect="618.75 / 366" />
         <div className="wrap">
           <div className="section-head">
             <span className="kicker">The shift</span>
