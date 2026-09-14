@@ -7,6 +7,9 @@ import { useEffect, useId, useRef, useState } from 'react'
  * advance together at the same pace and the revealed corner travels straight
  * along the diagonal to the top right.
  *
+ * The reveal and the ambient drift both wait for the section to scroll into
+ * view (via IntersectionObserver); nothing animates for off-screen sections.
+ *
  * It is asset-agnostic. Because the mask is anchored in view-box units, any SVG
  * dropped into public/era/… works with no per-asset configuration:
  *
@@ -78,7 +81,7 @@ export default function EraBackdrop({
       }
 
   return (
-    <div ref={hostRef} className={`era-backdrop ${className}`} aria-hidden="true" style={{ aspectRatio: aspect }}>
+    <div ref={hostRef} className={`era-backdrop ${className}${started ? ' revealed' : ''}`} aria-hidden="true" style={{ aspectRatio: aspect }}>
       <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet" style={{ opacity }}>
         <defs>
           <filter id={blurId} x="-20%" y="-20%" width="140%" height="140%">

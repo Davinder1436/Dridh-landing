@@ -1,3 +1,5 @@
+import EraBackdrop from '../era/EraBackdrop'
+
 const CAPABILITIES = [
   {
     h: 'Rooms, beds and programmes in one reservation',
@@ -20,6 +22,7 @@ const CAPABILITIES = [
 export default function Product() {
   return (
     <section id="product" className="product product-ground section-rule">
+      <EraBackdrop src="era/product/frontdesk.svg" className="era-product-desk" aspect="113.25 / 91.5" opacity={0.12} />
       <div className="wrap">
         <div className="section-head">
           <span className="kicker">Dridh PMS · Version 1</span>

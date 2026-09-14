@@ -11,7 +11,8 @@ const SIGNALS = [
 export default function Hero() {
   return (
     <section className="hero" id="top">
-      <EraBackdrop src="era/medieval/palace.svg" className="era-hero" />
+      <EraBackdrop src="era/fold1/yoga-fold1.svg" className="era-hero" aspect="1 / 1" />
+      <EraBackdrop src="era/fold1/camel-fold1.svg" className="era-hero-camel" aspect="631.5 / 424.5" opacity={0.1} />
       <div className="wrap">
         <span className="kicker">Hospitality systems · built for what comes next</span>
         <h1>
