@@ -206,6 +206,8 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .hero .signal b { font-size: clamp(28px, 2.6vw, 34px); }
 .hero .signal span { margin-top: 6px; font-size: 13.5px; line-height: 1.45; }
 .hero .signal i { margin-top: 6px; }
+/* the hook phrase in each fact */
+.hero .signal span em { font-style: normal; color: var(--secondary); }
 .signal b {
   display: block; font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 40px; line-height: 1; color: var(--primary); font-weight: 600;
