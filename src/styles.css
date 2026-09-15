@@ -56,6 +56,13 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+/* nothing may push the page wider than the screen (backdrop art hangs off the
+   edges on purpose); clip does not create a scroll container, so window
+   scrolling and the header's scroll behaviour are unaffected */
+main, .footer { overflow-x: hidden; }
+@supports (overflow: clip) {
+  html, body, main, .footer { overflow-x: clip; }
+}
 
 h1, h2, h3, h4, .display {
   font-family: "Cormorant Garamond", Cormorant, Garamond, Georgia, serif;
@@ -168,17 +175,20 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .btn-ghost-dark:hover { border-color: var(--ivory); color: #fff; }
 
 /* ---------- hero ------------------------------------------------------- */
-.hero { padding-top: calc(var(--header-h) + clamp(24px, 3.4vw, 48px)); padding-bottom: clamp(56px, 8vw, 110px); }
+.hero { padding-top: calc(var(--header-h) + clamp(24px, 3.4vw, 48px)); padding-bottom: clamp(72px, 10vw, 150px); }
 .hero h1 { max-width: 34ch; font-size: clamp(38px, 5.4vw, 70px); }
 .hero h1 .accent { color: var(--secondary); font-style: italic; }
 .hero .lede { margin-top: 30px; font-size: clamp(18px, 1.85vw, 22px); max-width: 62ch; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
 
 
-/* signal strip */
-.signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px;
-  background: var(--rule); border: 1px solid var(--rule); margin-top: 54px; }
-.signal { background: var(--ground); padding: 20px 22px; }
+/* facts grid: 4 columns; hairlines come from each box's 1px ring over a 1px
+   gap, so plain boxes can stay see-through and the yoga art shows behind them */
+.signals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 1fr;
+  gap: 1px; padding: 1px; margin-top: 64px; }
+.signal { background: rgba(245, 243, 235, .78); padding: 20px 22px; box-shadow: 0 0 0 1px var(--rule); }
+@media (max-width: 900px) { .signals { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .signals { grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; } }
 .signal b {
   display: block; font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 40px; line-height: 1; color: var(--primary); font-weight: 600;
@@ -196,7 +206,7 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .section-head .lede { margin-top: 20px; }
 
 /* ---------- triggers (section 2) --------------------------------------- */
-.triggers { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0;
+.triggers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 0;
   border-top: 1px solid var(--rule); }
 .trigger {
   padding: 30px 34px 30px 0; border-bottom: 1px solid var(--rule);
@@ -334,26 +344,25 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 @media (max-width: 700px)  { .era-soon-hotel { display: none; } }
 
 /* ---------- automation backdrops (fold 3) -------------------------------- */
-#automation { position: relative; }
+#automation { position: relative; min-height: 100vh; }
 #automation .wrap { position: relative; z-index: 1; }
-/* burj sits down the left side of the automation section */
-.era-auto-burj {
-  left: -3%; top: 22%; width: min(24%, 300px);
-}
-@media (max-width: 1000px) { .era-auto-burj { opacity: .55; } }
-@media (max-width: 700px)  { .era-auto-burj { display: none; } }
+/* down the scroll: beach (small-medium) right, butler (medium) left, burj (large) right;
+   burj is portrait, so its width is scaled to keep its long side "large" */
+.era-auto-beach  { right: 3%; top: 4%; width: var(--era-sm); }
+.era-auto-butler { left: 2%; top: 36%; width: var(--era-m); }
+.era-auto-burj   { right: 2%; bottom: 3%; width: calc(var(--era-l) * .71); }
 
-/* ---------- product backdrop (front desk) --------------------------------- */
-#product { position: relative; }
-#product .wrap { position: relative; z-index: 1; }
-/* front desk holds the top right, up in the section's top padding band
-   so it clears the heading and lede — like the hero's yoga piece,
-   which hangs top-right of its own section */
-.era-product-desk {
-  right: 2cm; top: 0; width: min(54%, 660px);
-}
-@media (max-width: 1000px) { .era-product-desk { opacity: .55; } }
-@media (max-width: 700px)  { .era-product-desk { display: none; } }
+/* ---------- product + reading backdrops (fold 4) -------------------------- */
+#product, #reading { position: relative; }
+#product .wrap, #reading .wrap { position: relative; z-index: 1; }
+/* alternation continues from burj (right): VR (large) left, machine
+   intelligence (medium) right, robohelp (medium, portrait) left ... */
+.era-product-vr      { left: 2%; top: 2%; width: var(--era-l); }
+.era-product-machine { right: 2%; top: 32%; width: var(--era-m); }
+.era-product-robo    { left: 1%; top: 58%; width: calc(var(--era-m) * .79); }
+/* ... and the front desk (extra large) closes the story on the right,
+   in the reading section's heading band */
+.era-reading-desk    { right: 2%; top: 0; width: var(--era-xl); }
 
 /* ---------- product (section 4, dark) ----------------------------------- */
 .product { background: var(--black-ground); color: var(--ivory); }
@@ -362,7 +371,7 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .product p { color: var(--ivory); }
 .product .lede { color: var(--ivory); }
 .product a { color: var(--sand); }
-.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 34px; margin-top: 46px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 34px; margin-top: 46px; }
 .product-item { border-top: 1px solid rgba(237,228,210,.22); padding-top: 18px; }
 .product-item h4 { color: var(--ivory); margin-bottom: 8px; font-size: 18px; }
 .product-item p { font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(237,228,210,.86); }
@@ -451,8 +460,8 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 }
 
 /* ---------- article cards -------------------------------------------------- */
-.acard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; }
-.acard-grid-lg { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 34px; }
+.acard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 26px; }
+.acard-grid-lg { grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 34px; }
 .acard {
   display: flex; flex-direction: column; text-decoration: none; color: inherit;
   border: 1px solid var(--rule); background: var(--surface);
@@ -529,58 +538,54 @@ section { padding-block: clamp(64px, 9vw, 132px); }
   .sched-body iframe { min-height: 480px; }
 }
 
-/* ---------- era backdrop (plain images; only .animated moves) ------------ */
+/* ---------- era backdrop (plain static images) ---------------------------- */
 .era-backdrop {
   position: absolute; z-index: 0;
   pointer-events: none; user-select: none; overflow: hidden;
 }
 .era-backdrop img { width: 100%; height: 100%; display: block; object-fit: contain; }
-.era-backdrop svg { width: 100%; height: 100%; display: block; }
-
-/* hero yoga artwork only: bottom-left reveal + ambient drift */
-@keyframes era-grow { from { transform: scale(.06) } to { transform: scale(1) } }
-@keyframes era-drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, -8px, 0); } }
-@media (prefers-reduced-motion: no-preference) {
-  .era-backdrop.animated .era-reveal {
-    transform-box: view-box; transform-origin: 0% 100%;
-    animation: era-grow 5s cubic-bezier(.35,.15,.6,.9) both;
-  }
-  .era-backdrop.animated svg { animation: era-drift 28s ease-in-out infinite alternate; }
+/* size scale for the era art. Every SVG is cropped to its visible drawing
+   (viewBox = content bounds + 2%), so these widths are the drawing's own
+   size: yoga is extra large, camel is medium */
+:root {
+  --era-xl: min(41.6%, 528px);
+  --era-l:  min(32%, 400px);
+  --era-m:  min(21.6%, 264px);
+  --era-sm: min(17.6%, 216px);
+  --era-s:  min(13.6%, 168px);
 }
+@media (max-width: 1000px) { .era-backdrop { opacity: .55; } }
+@media (max-width: 700px)  { .era-backdrop { display: none; } }
+
 
 /* the hero holds the backdrop; its own content must sit above it */
 .hero { position: relative; }
 .hero .wrap { position: relative; z-index: 1; }
 .era-hero {
-  right: -4%; width: min(60%, 760px);
-  top: 50%; transform: translateY(-46%);
+  right: 2%; width: var(--era-xl);
+  bottom: 0;
 }
-@media (max-width: 1000px) { .era-hero { opacity: .55; right: -14%; width: 78%; } }
-@media (max-width: 700px)  { .era-hero { display: none; } }
+@media (max-width: 1000px) { .era-hero { right: 2%; width: 54%; } }
 
-/* fold-1 corner piece: pinned to the bottom-left of the first screen */
+/* fold-1 corner piece: camel at the top left, clear of the header */
 .era-hero-camel {
-  left: -3%; bottom: 0; width: min(30%, 360px);
+  left: 2%; top: var(--header-h); width: var(--era-m);
 }
-@media (max-width: 1000px) { .era-hero-camel { opacity: .55; left: -10%; width: 44%; } }
-@media (max-width: 700px)  { .era-hero-camel { display: none; } }
+@media (max-width: 1000px) { .era-hero-camel { left: 2%; width: 32%; } }
 
 
 
 /* ---------- shift section ------------------------------------------------- */
 #shift { position: relative; }
 #shift .wrap { position: relative; z-index: 1; }
-/* train sits fully visible along the bottom left; the aspect matches the
-   artwork's own viewBox so the frame never crops it */
-.era-shift-drift {
-  left: -2%; bottom: 4%; width: min(44%, 560px);
-}
-@media (max-width: 1000px) { .era-shift-drift { opacity: .55; } }
-@media (max-width: 700px)  { .era-shift-drift { display: none; } }
+/* fold 2: train (medium) top left, industrial-era hotel (large) bottom right;
+   each aspect matches the artwork's own viewBox so the frame never crops it */
+.era-shift-train { left: 2%; top: 3%; width: var(--era-m); }
+.era-shift-hotel { right: 2%; bottom: 3%; width: var(--era-l); }
 /* heading runs on a single line, full measure */
 #shift .section-head { max-width: none; }
 .shift-title { white-space: nowrap; font-size: clamp(26px, 3.4vw, 42px); }
-@media (max-width: 720px) { .shift-title { white-space: normal; } }
+@media (max-width: 1100px) { .shift-title { white-space: normal; } }
 
 /* screen-reader-only text accompanying the animated heading word */
 .sr-only {
@@ -648,6 +653,38 @@ section { padding-block: clamp(64px, 9vw, 132px); }
   max-width: 900px;
 }
 .soon-box p { margin: 14px 0 0; color: var(--ink-soft); font-size: 15.5px; }
+
+/* ---------- agentic management (section 4) --------------------------------- */
+/* content holds the left; the right edge stays clear for the burj backdrop */
+.auto-list, .auto-answer { max-width: 860px; }
+.auto-list { list-style: none; padding: 0; margin-top: 0; margin-bottom: 0; border-top: 1px solid var(--rule-strong); }
+.auto-row {
+  display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 20px;
+  padding: clamp(22px, 2.6vw, 32px) 0; border-bottom: 1px solid var(--rule);
+}
+.auto-row .idx {
+  font-family: Mukta, system-ui, sans-serif; font-size: 11.5px; font-weight: 600;
+  letter-spacing: .1em; color: var(--secondary); padding-top: 9px;
+}
+.auto-row h3 { margin-bottom: 6px; }
+.auto-row p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-soft); }
+.auto-answer {
+  margin-top: clamp(56px, 7vw, 96px); padding: clamp(28px, 4vw, 48px);
+  background: var(--primary); color: var(--ground);
+}
+.auto-answer .kicker { color: var(--sand); }
+.auto-answer h3 { color: var(--ground); max-width: 24ch; }
+.auto-answer ul {
+  list-style: none; padding: 0; margin: clamp(26px, 3vw, 36px) 0 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr)); gap: 24px;
+}
+.auto-answer li { border-top: 1px solid rgba(245, 243, 235, .28); padding-top: 14px; }
+.auto-answer strong {
+  display: block; font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px; font-weight: 600; line-height: 1.2; color: var(--ground);
+}
+.auto-answer span { display: block; margin-top: 6px; font-size: 14.5px; line-height: 1.55; color: var(--ground); opacity: .82; }
+@media (max-width: 700px) { .auto-row { grid-template-columns: 1fr; gap: 4px; } .auto-row .idx { padding-top: 0; } }
 
 /* ---------- product on ground -------------------------------------------- */
 .product-ground { background: var(--ground); color: var(--ink); }

@@ -1,27 +1,27 @@
 const TRIGGERS = [
   {
-    h: 'Your guest no longer sees a page of twenty hotels',
-    p: 'A machine now returns three to five. Being outside that answer is not a lower ranking — it is not being considered at all.',
+    h: 'Guests no longer scroll through twenty hotels',
+    p: 'An AI hands them three to five. Everyone else simply isn’t there.',
   },
   {
-    h: 'The visitor who does arrive is worth five of the old ones',
-    p: 'Someone sent by an assistant has already been told you are the right property. They convert several times better than ordinary search traffic — and they land on whatever booking page you happen to have.',
+    h: 'The guest an AI sends you has already decided',
+    p: 'They book several times more often than a search visitor.',
   },
   {
-    h: 'An AI is already describing your property',
-    p: 'It answers from your listing on an intermediary’s site, in words you did not write. Tens of thousands of those answers are given every day, whether or not you participate.',
+    h: 'ChatGPT is already describing your property',
+    p: 'Mostly in words lifted from an OTA listing, not yours.',
   },
   {
-    h: 'Your own website is quoted less than a stranger’s forum post',
-    p: 'Most of what these systems cite is earned — reviews, forums, video, third-party pages. The brochure site you paid for is rarely the source.',
+    h: 'Reviews and forums speak louder than your website',
+    p: 'That is what the AI reads before it recommends anyone.',
   },
   {
-    h: 'The booking still happens on your site, if it can',
-    p: 'Google built it with Amadeus and the global chains, not with hotels. A property reaches that channel through its technology vendor — and the first vendor anywhere to open the door did so in September 2026.',
+    h: 'Your software decides whether an AI can book you',
+    p: 'Very few systems in India can answer an AI agent today.',
   },
   {
-    h: 'None of this requires you to buy artificial intelligence',
-    p: 'What decides whether you are considered is data you already own, published in a form a machine can read. That is a week of work, not a transformation programme.',
+    h: 'You don’t need to buy “AI”',
+    p: 'You need the data you already own, in a shape machines can read.',
   },
 ]
 
@@ -32,7 +32,8 @@ const WORDS = ['Business', 'Hotel', 'Retreat', 'Resort', 'Ashram', 'Yoga Centre'
 export default function Impact() {
   return (
       <section id="shift" className="section-rule">
-        <EraBackdrop src="era/fold2/train-fold2.svg" className="era-shift-drift" aspect="694.5 / 447.75" opacity={0.16} />
+        <EraBackdrop src="era/fold2/hotel-fold2.svg" className="era-shift-hotel" aspect="715.95 / 435.37" />
+        <EraBackdrop src="era/fold2/train-fold2.svg" className="era-shift-train" aspect="86.86 / 73.01" opacity={0.16} />
         <div className="wrap">
           <div className="section-head">
             <span className="kicker">The shift</span>

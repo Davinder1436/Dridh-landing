@@ -6,8 +6,7 @@ export default function LiveDemo() {
           <span className="kicker">Live demo</span>
           <h2>ChatGPT knows you?</h2>
           <p className="lede">
-            A short walkthrough of how an assistant finds, quotes and books a
-            property like yours. The full video lands here soon.
+            Watch an assistant find, quote and book a property like yours.
           </p>
         </div>
 

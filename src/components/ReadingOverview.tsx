@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { loadArticleIndex, type ArticleMeta } from '../lib/markdown'
 import ArticleCard from './ArticleCard'
+import EraBackdrop from '../era/EraBackdrop'
 
 export default function ReadingOverview() {
   const [index, setIndex] = useState<ArticleMeta[]>([])
@@ -13,14 +14,13 @@ export default function ReadingOverview() {
 
   return (
     <section id="reading" className="section-rule">
+      <EraBackdrop src="era/fold4/frontdesk.svg" className="era-reading-desk" aspect="100.12 / 76.1" opacity={0.12} />
       <div className="wrap">
         <div className="section-head">
           <span className="kicker">Reading</span>
           <h2>The evidence, written for someone who does not follow AI</h2>
           <p className="lede">
-            Each piece opens with a two-minute version in plain language, then the detail — what
-            each company has actually shipped, when it reaches a property like yours, and every
-            source so you can check us.
+            Two-minute reads on what AI is changing for hotels, with every source linked.
           </p>
         </div>
 

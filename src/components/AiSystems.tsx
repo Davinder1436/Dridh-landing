@@ -5,6 +5,7 @@ export default function AiSystems() {
         <div className="section-head">
           <span className="kicker">AI in systems</span>
           <h2>AI accelerated management</h2>
+          <p className="lede">One sentence to your PMS. It plans the work, you approve, it’s done.</p>
         </div>
 
         <div className="demo-frame" role="img" aria-label="Systems demo placeholder — the AI management demo video will play here">

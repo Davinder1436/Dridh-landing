@@ -10,8 +10,7 @@ export default function Contact() {
             <span className="kicker">Contact us</span>
             <h2>Fifteen minutes is enough to see if we can help.</h2>
             <p className="lede" style={{ marginTop: '20px' }}>
-              Write to us or directly book a slot. We&apos;ll come prepared to talk about your
-              property the way guests are discovering places today and where you will need our help.
+              Write to us or book a slot. We&apos;ll come knowing where your property stands today.
             </p>
 
           </div>
