@@ -18,7 +18,7 @@ export default function Contact() {
           <div className="contact-card">
             <h3>Start here</h3>
             <p className="small" style={{ marginBottom: '14px' }}>
-              Either route reaches the same two people.
+              Either route reaches us and you will be contacted in less than a day.
             </p>
             <a className="contact-mail" href={`mailto:${SITE.email}`}>
               {SITE.email}
