@@ -42,8 +42,8 @@ import EraBackdrop from '../era/EraBackdrop'
 export default function Offering() {
   return (
     <section id="offer" className="section-rule">
-      <EraBackdrop src="era/fold3/beach-fold3.svg" className="era-offer-beach" aspect="589.5 / 453.75" />
-      <EraBackdrop src="era/fold3/burj-fold3.svg" className="era-offer-burj" aspect="321 / 419.25" />
+      <EraBackdrop src="era/fold3/butler-fold3.svg" className="era-offer-butler" aspect="519.75 / 443.25" />
+      <EraBackdrop src="era/fold3/beach-fold3.svg" className="era-offer-beach-mid" aspect="589.5 / 453.75" />
       <div className="wrap">
         <div className="section-head">
           <span className="kicker">What we provide</span>

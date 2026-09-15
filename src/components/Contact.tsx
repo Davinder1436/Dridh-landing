@@ -7,12 +7,11 @@ export default function Contact() {
       <div className="wrap">
         <div className="contact-grid">
           <div>
-            <span className="kicker">Contact</span>
-            <h2>Fifteen minutes is enough to tell whether we can help</h2>
+            <span className="kicker">Contact us</span>
+            <h2>Fifteen minutes is enough to see if we can help.</h2>
             <p className="lede" style={{ marginTop: '20px' }}>
-              Write to us, or take a slot directly. We look at your property before the call and
-              arrive with something specific — usually a straight account of where you currently
-              stand with the systems that decide which hotels get recommended.
+              Write to us or directly book a slot. We&apos;ll come prepared to talk about your
+              property the way guests are discovering places today and where you will need our help.
             </p>
 
           </div>

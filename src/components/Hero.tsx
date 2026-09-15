@@ -1,4 +1,3 @@
-import { SITE } from '../config'
 import EraBackdrop from '../era/EraBackdrop'
 
 const SIGNALS = [
@@ -20,23 +19,7 @@ export default function Hero() {
           <span className="accent">AI era</span>.
         </h1>
         <p className="lede">
-          Your guests have already started asking machines where to stay. We build the systems that make your property legible to those machines.
-        </p>
-
-        <div className="hero-actions">
-          <a className="btn btn-primary btn-lg" href="#shift">
-            See what is changing
-          </a>
-          <a className="btn btn-ghost btn-lg" href={`mailto:${SITE.email}`}>
-            {SITE.email}
-          </a>
-        </div>
-
-        <p className="hero-note">
-          Five of every six hotels cannot be read by the systems now writing that shortlist.{' '}
-          <strong>Closing that gap is inexpensive, and much of it is free.</strong> It does not stay
-          that way — the properties already legible to these systems are quietly accumulating the
-          signals that decide who gets recommended next season.
+          Your guests are asking ChatGPT where to stay. Are you available there? Don&apos;t worry, we can make you.
         </p>
 
         <div className="signals">

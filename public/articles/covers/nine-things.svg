@@ -1,36 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="A grid of nine claims, eight struck through and one standing">
-<rect width="1200" height="675" fill="#F5F3EB"/>
-<text x="80" y="96" font-family="IBM Plex Mono, monospace" font-size="20" letter-spacing="3" fill="#A9613C">WHAT THE EVIDENCE DOES NOT SUPPORT</text>
+<rect width="1200" height="675" fill="#A9613C"/>
+<text x="80" y="96" font-family="IBM Plex Mono, monospace" font-size="20" letter-spacing="3" fill="#F5F3EB">WHAT THE EVIDENCE DOES NOT SUPPORT</text>
 <g>
 <g transform="translate(80,150)">
-<rect width="320" height="92" rx="3" fill="none" stroke="#1A3E2A" stroke-width="1.5" opacity=".45"/>
-<line x1="26" y1="46" x2="294" y2="46" stroke="#A9613C" stroke-width="3.5"/></g>
+<rect width="320" height="92" rx="3" fill="none" stroke="#F5F3EB" stroke-width="1.5" opacity=".45"/>
+<line x1="26" y1="46" x2="294" y2="46" stroke="#F5F3EB" stroke-width="3.5"/></g>
 <g transform="translate(440,150)">
-<rect width="320" height="92" rx="3" fill="none" stroke="#1A3E2A" stroke-width="1.5" opacity=".45"/>
-<line x1="26" y1="46" x2="294" y2="46" stroke="#A9613C" stroke-width="3.5"/></g>
+<rect width="320" height="92" rx="3" fill="none" stroke="#F5F3EB" stroke-width="1.5" opacity=".45"/>
+<line x1="26" y1="46" x2="294" y2="46" stroke="#F5F3EB" stroke-width="3.5"/></g>
 <g transform="translate(800,150)">
-<rect width="320" height="92" rx="3" fill="none" stroke="#1A3E2A" stroke-width="1.5" opacity=".45"/>
-<line x1="26" y1="46" x2="294" y2="46" stroke="#A9613C" stroke-width="3.5"/></g>
+<rect width="320" height="92" rx="3" fill="none" stroke="#F5F3EB" stroke-width="1.5" opacity=".45"/>
+<line x1="26" y1="46" x2="294" y2="46" stroke="#F5F3EB" stroke-width="3.5"/></g>
 <g transform="translate(80,266)">
-<rect width="320" height="92" rx="3" fill="none" stroke="#1A3E2A" stroke-width="1.5" opacity=".45"/>
-<line x1="26" y1="46" x2="294" y2="46" stroke="#A9613C" stroke-width="3.5"/></g>
+<rect width="320" height="92" rx="3" fill="none" stroke="#F5F3EB" stroke-width="1.5" opacity=".45"/>
+<line x1="26" y1="46" x2="294" y2="46" stroke="#F5F3EB" stroke-width="3.5"/></g>
 <g transform="translate(440,266)">
 <rect width="320" height="92" rx="3" fill="#1A3E2A"/>
 <text x="160" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="21" fill="#F5F3EB">What is actually true</text>
 <text x="160" y="70" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#F5F3EB" opacity=".85">SHORTLISTED, NOT PAID</text></g>
 <g transform="translate(800,266)">
-<rect width="320" height="92" rx="3" fill="none" stroke="#1A3E2A" stroke-width="1.5" opacity=".45"/>
-<line x1="26" y1="46" x2="294" y2="46" stroke="#A9613C" stroke-width="3.5"/></g>
+<rect width="320" height="92" rx="3" fill="none" stroke="#F5F3EB" stroke-width="1.5" opacity=".45"/>
+<line x1="26" y1="46" x2="294" y2="46" stroke="#F5F3EB" stroke-width="3.5"/></g>
 <g transform="translate(80,382)">
-<rect width="320" height="92" rx="3" fill="none" stroke="#1A3E2A" stroke-width="1.5" opacity=".45"/>
-<line x1="26" y1="46" x2="294" y2="46" stroke="#A9613C" stroke-width="3.5"/></g>
+<rect width="320" height="92" rx="3" fill="none" stroke="#F5F3EB" stroke-width="1.5" opacity=".45"/>
+<line x1="26" y1="46" x2="294" y2="46" stroke="#F5F3EB" stroke-width="3.5"/></g>
 <g transform="translate(440,382)">
-<rect width="320" height="92" rx="3" fill="none" stroke="#1A3E2A" stroke-width="1.5" opacity=".45"/>
-<line x1="26" y1="46" x2="294" y2="46" stroke="#A9613C" stroke-width="3.5"/></g>
+<rect width="320" height="92" rx="3" fill="none" stroke="#F5F3EB" stroke-width="1.5" opacity=".45"/>
+<line x1="26" y1="46" x2="294" y2="46" stroke="#F5F3EB" stroke-width="3.5"/></g>
 <g transform="translate(800,382)">
-<rect width="320" height="92" rx="3" fill="none" stroke="#1A3E2A" stroke-width="1.5" opacity=".45"/>
-<line x1="26" y1="46" x2="294" y2="46" stroke="#A9613C" stroke-width="3.5"/></g>
+<rect width="320" height="92" rx="3" fill="none" stroke="#F5F3EB" stroke-width="1.5" opacity=".45"/>
+<line x1="26" y1="46" x2="294" y2="46" stroke="#F5F3EB" stroke-width="3.5"/></g>
 </g>
-<text x="80" y="560" font-family="Georgia, serif" font-size="29" font-style="italic" fill="#1A3E2A">Eight of nine headlines do not survive checking.</text>
-<text x="80" y="606" font-family="Georgia, serif" font-size="22" fill="#1A3E2A" opacity=".75">Airbnb reaches 45%, not 90%. Atlas shut down. Visa processed hundreds.</text>
+<text x="80" y="560" font-family="Georgia, serif" font-size="29" font-style="italic" fill="#F5F3EB">Eight of nine headlines do not survive checking.</text>
+<text x="80" y="606" font-family="Georgia, serif" font-size="22" fill="#F5F3EB" opacity=".75">Airbnb reaches 45%, not 90%. Atlas shut down. Visa processed hundreds.</text>
 </svg>

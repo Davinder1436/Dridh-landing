@@ -173,11 +173,7 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .hero h1 .accent { color: var(--secondary); font-style: italic; }
 .hero .lede { margin-top: 30px; font-size: clamp(18px, 1.85vw, 22px); max-width: 62ch; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
-.hero-note {
-  margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--rule);
-  max-width: 62ch; font-size: 15.5px; color: var(--ink-soft);
-}
-.hero-note strong { color: var(--primary); font-weight: 600; }
+
 
 /* signal strip */
 .signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px;
@@ -316,16 +312,36 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 /* ---------- offer backdrops (fold 3) -------------------------------------- */
 #offer { position: relative; }
 #offer .wrap { position: relative; z-index: 1; }
-/* beach holds the right side, level with point 01 */
-.era-offer-beach {
+/* butler holds the top right of the section */
+.era-offer-butler {
   right: calc(-4% + 1cm); top: 14%; width: min(40%, 480px);
 }
-/* burj sits down the left side, against the middle of points 02 and 03 */
-.era-offer-burj {
+/* beach sits down the left side, against the middle of points 02 and 03 */
+.era-offer-beach-mid {
   left: -3%; top: 55%; width: min(24%, 300px);
 }
-@media (max-width: 1000px) { .era-offer-beach, .era-offer-burj { opacity: .55; } }
-@media (max-width: 700px)  { .era-offer-beach, .era-offer-burj { display: none; } }
+@media (max-width: 1000px) { .era-offer-butler, .era-offer-beach-mid { opacity: .55; } }
+@media (max-width: 700px)  { .era-offer-butler, .era-offer-beach-mid { display: none; } }
+
+/* ---------- soon backdrops (fold 3) -------------------------------------- */
+#soon { position: relative; }
+#soon .wrap { position: relative; z-index: 1; }
+/* hotel holds the right side of the coming-soon section */
+.era-soon-hotel {
+  right: -3%; top: 18%; width: min(38%, 460px);
+}
+@media (max-width: 1000px) { .era-soon-hotel { opacity: .55; } }
+@media (max-width: 700px)  { .era-soon-hotel { display: none; } }
+
+/* ---------- automation backdrops (fold 3) -------------------------------- */
+#automation { position: relative; }
+#automation .wrap { position: relative; z-index: 1; }
+/* burj sits down the left side of the automation section */
+.era-auto-burj {
+  left: -3%; top: 22%; width: min(24%, 300px);
+}
+@media (max-width: 1000px) { .era-auto-burj { opacity: .55; } }
+@media (max-width: 700px)  { .era-auto-burj { display: none; } }
 
 /* ---------- product backdrop (front desk) --------------------------------- */
 #product { position: relative; }
@@ -444,7 +460,7 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 }
 .acard:hover { border-color: var(--rule-strong); transform: translateY(-3px); box-shadow: var(--shadow); }
 .acard:hover h3 { color: var(--secondary); }
-.acard-cover { border-bottom: 1px solid var(--rule); background: var(--ground); overflow: hidden; }
+.acard-cover { border-bottom: 1px solid var(--rule); background: var(--secondary); overflow: hidden; }
 .acard-cover img { width: 100%; height: auto; display: block; }
 .acard-body { padding: 22px 24px 24px; display: flex; flex-direction: column; flex: 1; }
 .acard h3 { font-size: 25px; line-height: 1.16; margin: 10px 0 0; transition: color .2s ease; }
@@ -551,19 +567,46 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 
 
 
-/* ---------- shift section (fold 2) ---------------------------------------- */
+/* ---------- shift section ------------------------------------------------- */
 #shift { position: relative; }
 #shift .wrap { position: relative; z-index: 1; }
-/* main visual: sunrise holds the upper right, like the hero's feature art */
-.era-shift {
-  right: -5%; top: calc(6% - 2cm); width: min(52%, 620px);
-}
-/* secondary piece: dumbbell + towel sits fully visible along the bottom left */
+/* train sits fully visible along the bottom left; the aspect matches the
+   artwork's own viewBox so the frame never crops it */
 .era-shift-drift {
   left: -2%; bottom: 4%; width: min(44%, 560px);
 }
-@media (max-width: 1000px) { .era-shift, .era-shift-drift { opacity: .55; } }
-@media (max-width: 700px)  { .era-shift, .era-shift-drift { display: none; } }
+@media (max-width: 1000px) { .era-shift-drift { opacity: .55; } }
+@media (max-width: 700px)  { .era-shift-drift { display: none; } }
+/* heading runs on a single line, full measure */
+#shift .section-head { max-width: none; }
+.shift-title { white-space: nowrap; font-size: clamp(26px, 3.4vw, 42px); }
+@media (max-width: 720px) { .shift-title { white-space: normal; } }
+
+/* screen-reader-only text accompanying the animated heading word */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* rotating heading word: one copper word visible at a time, scrolling up */
+.spin-words {
+  display: inline-block; height: 1.25em; overflow: hidden;
+  vertical-align: bottom; color: var(--secondary);
+}
+.spin-track { display: inline-flex; flex-direction: column; animation: wordspin 18s ease-in-out infinite; }
+.spin-track > span { display: block; height: 1.25em; line-height: 1.25; white-space: nowrap; }
+@keyframes wordspin {
+  0%, 10% { transform: translateY(0); }
+  14.28%, 24.28% { transform: translateY(-1.25em); }
+  28.57%, 38.57% { transform: translateY(-2.5em); }
+  42.86%, 52.86% { transform: translateY(-3.75em); }
+  57.14%, 67.14% { transform: translateY(-5em); }
+  71.43%, 81.43% { transform: translateY(-6.25em); }
+  85.71%, 100% { transform: translateY(-7.5em); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spin-track { animation: none; }
+}
 
 
 /* ---------- reading band (copper) ---------------------------------------- */
@@ -579,9 +622,32 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .reading-band .acard p,
 .reading-band .acard .acard-hook { color: var(--ink); }
 .reading-band .acard:hover { border-color: var(--ground); }
-.reading-band .acard-cover { background: var(--ground); }
+.reading-band .acard-cover { background: var(--secondary); }
 .btn-on-copper { background: var(--ground); color: var(--secondary); border-color: var(--ground); }
 .btn-on-copper:hover { background: #fff; color: var(--secondary); }
+
+/* ---------- live demo band (copper) --------------------------------------- */
+.demo-band { background: var(--secondary); }
+.demo-band h2, .demo-band .lede { color: var(--ground); }
+.demo-band .kicker { color: var(--ground); opacity: .85; }
+/* 16:9 placeholder where the demo video upload will play */
+.demo-frame {
+  aspect-ratio: 16 / 9; border: 1px solid rgba(245, 243, 235, .35);
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: 24px;
+}
+.demo-frame strong {
+  display: block; font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(26px, 3vw, 36px); font-weight: 500; color: var(--ground);
+}
+.demo-frame span { display: block; margin-top: 8px; font-size: 15px; color: var(--ground); opacity: .75; }
+
+/* ---------- coming-soon placeholder (light) --------------------------------- */
+.soon-box {
+  border: 1px dashed var(--rule-strong); padding: clamp(30px, 4vw, 46px);
+  max-width: 900px;
+}
+.soon-box p { margin: 14px 0 0; color: var(--ink-soft); font-size: 15.5px; }
 
 /* ---------- product on ground -------------------------------------------- */
 .product-ground { background: var(--ground); color: var(--ink); }
@@ -592,13 +658,14 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .product-ground .product-item { border-top-color: var(--rule-strong); }
 .product-ground .product-item h4 { color: var(--primary); }
 .product-ground .product-item p { color: var(--ink); }
-.product-ground .review { border-color: var(--rule-strong); background: var(--surface-warm); }
-.product-ground .review .kicker { color: var(--secondary); }
-.product-ground .review blockquote { color: var(--primary); }
-.product-ground .review-by div { color: var(--ink-soft); }
-.product-ground .review-by strong { color: var(--primary); }
-.product-ground .review-by .dash { background: var(--secondary); }
-.product-ground .placeholder-flag { background: var(--secondary); color: #fff; }
+.product-ground .review { border-color: var(--secondary); background: var(--secondary); }
+.product-ground .review .kicker { color: var(--ground); opacity: .85; }
+.product-ground .review blockquote { color: var(--ground); }
+.product-ground .review blockquote p { color: var(--ground); }
+.product-ground .review-by div { color: var(--ground); opacity: .85; }
+.product-ground .review-by strong { color: var(--ground); }
+.product-ground .review-by .dash { background: var(--ground); }
+.product-ground .placeholder-flag { background: var(--ground); color: var(--secondary); }
 
 /* ---------- contact in copper -------------------------------------------- */
 .contact-copper { background: var(--secondary); }

@@ -27,20 +27,26 @@ const TRIGGERS = [
 
 import EraBackdrop from '../era/EraBackdrop'
 
+const WORDS = ['Business', 'Hotel', 'Retreat', 'Resort', 'Ashram', 'Yoga Centre']
+
 export default function Impact() {
   return (
       <section id="shift" className="section-rule">
-        <EraBackdrop src="era/fold2/sunrise-fold2.svg" className="era-shift" aspect="563.25 / 429" />
-        <EraBackdrop src="era/fold2/dumbbell-towel-fold2.svg" className="era-shift-drift" aspect="618.75 / 366" opacity={0.16} />
+        <EraBackdrop src="era/fold2/train-fold2.svg" className="era-shift-drift" aspect="694.5 / 447.75" opacity={0.16} />
         <div className="wrap">
           <div className="section-head">
             <span className="kicker">The shift</span>
-            <h2>What the AI era is actually doing to a hospitality business</h2>
-            <p className="lede">
-              Not predictions. Six changes already measurable in how guests find, choose, book and
-              talk to a hotel — together with an honest account of which ones will not reach your
-              property for another two years.
-            </p>
+            <h2 className="shift-title">
+              How the AI era will change your{' '}
+              <span className="spin-words" aria-hidden="true">
+                <span className="spin-track">
+                  {[...WORDS, WORDS[0]].map((w, i) => (
+                    <span key={i}>{w}</span>
+                  ))}
+                </span>
+              </span>
+              <span className="sr-only">Business</span>
+            </h2>
           </div>
 
           <div className="triggers">
