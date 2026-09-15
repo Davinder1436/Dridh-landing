@@ -33,34 +33,33 @@ export default function Product() {
         </div>
 
         <div className="review">
-          <span className="placeholder-flag">Placeholder — awaiting approved quote</span>
           <span className="kicker">Founder, Osho Himalayas</span>
           <blockquote>
             <p>
-              When we started with Dridh in January 2026, honestly I was worried. Season was coming
-              and years of our bookings were sitting in old software and Excel sheets. The team said
-              give us one month. They sat with our front desk, shifted everything part by part, and
-              from February we were running fully on the new system. Not one day we had to stop
-              taking bookings.
+              I was honestly worried when we first started with Dridh in Jan&apos;26. It was a risk
+              because season was about to start, and all our bookings and data was stored on the old
+              software. Their team asked for a month and delivered. They took a great deal of effort
+              upon themselves in shifting every little thing to the new system. By February, we were
+              completely operational on it and didn&apos;t even have to shut down the bookings even
+              for a day throughout the process.
             </p>
             <p>
-              After that it has only kept getting better. Every few weeks something new comes, many
-              times a thing our staff asked for just the week before. Payments now match without
-              the evening headache, check-in paperwork is done before the guest even reaches, and I
-              see the day&apos;s occupancy and revenue on my phone without calling anybody. My team
-              gives time to guests now, not to registers.
+              It has kept getting better since then. Payments match now without the evening hassle,
+              check-in formalities are done before the guest arrives, plus I can monitor the
+              day&apos;s occupancy and revenue on my phone. Some new feature comes along every few
+              weeks, our staff is happy, and I am free of headache. My team gives time to guests,
+              not registers, now.
             </p>
-          
             <p>
-              What I like most about this team is their hunger. They work fast but the work is never
-              shoddy. You tell them a problem in the morning, by evening they are already showing
-              you something.
+              What I like most about this team is that they&apos;re always hungry to improve. They
+              work fast, but they don&apos;t rush things. If you bring up a problem in the morning,
+              you&apos;ll usually see them coming back with something by the end of the day.
             </p>
           </blockquote>
           <div className="review-by">
             <span className="dash" aria-hidden="true" />
             <div>
-              <strong>Rajiv</strong>
+              <strong>Rajiv Arora</strong>
               Founder, Osho Himalayas
             </div>
           </div>

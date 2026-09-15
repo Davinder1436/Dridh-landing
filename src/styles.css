@@ -405,20 +405,22 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .product-item p { font-size: 15.5px; line-height: 1.62; margin: 0; color: rgba(237,228,210,.86); }
 
 .review {
-  margin-top: clamp(48px, 6vw, 80px); padding: clamp(30px, 4vw, 46px);
+  margin-top: clamp(32px, 4vw, 48px); padding: clamp(22px, 3vw, 34px);
   border: 1px solid rgba(237,228,210,.24); background: rgba(237,228,210,.04);
-  max-width: 900px;
 }
 .review .kicker { color: var(--sand); }
 .review blockquote {
-  margin: 0 0 24px; font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(21px, 2.3vw, 27px); line-height: 1.38; color: var(--ivory); font-style: italic;
+  margin: 0 0 20px; font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(17px, 1.6vw, 20px); line-height: 1.45; color: var(--ivory); font-style: italic;
 }
-.review blockquote p { font: inherit; color: inherit; margin: 0 0 .5em; }
+.review blockquote p { font: inherit; color: inherit; margin: 0 0 .6em; }
 .review-by { display: flex; align-items: center; gap: 14px; }
 .review-by .dash { width: 26px; height: 1px; background: var(--sand); flex-shrink: 0; }
 .review-by div { font-family: Mukta, system-ui, sans-serif; font-size: 14px; line-height: 1.45; color: rgba(237,228,210,.9); }
-.review-by strong { display: block; color: var(--ivory); font-weight: 600; }
+.review-by strong {
+  display: block; color: var(--ivory); font-weight: 600;
+  font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(24px, 2.4vw, 30px); line-height: 1.15;
+}
 .placeholder-flag {
   display: inline-block; margin-bottom: 18px; font-family: Mukta, system-ui, sans-serif;
   font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
@@ -674,6 +676,63 @@ section { padding-block: clamp(64px, 9vw, 132px); }
   font-size: clamp(26px, 3vw, 36px); font-weight: 500; color: var(--ground);
 }
 .demo-frame span { display: block; margin-top: 8px; font-size: 15px; color: var(--ground); opacity: .75; }
+
+/* ChatGPT walkthrough: phone on the left, synced steps on the right */
+.demo-layout {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 96px); align-items: stretch;
+}
+.demo-phone-wrap { display: flex; justify-content: center; }
+.demo-phone {
+  width: min(450px, 86vw); aspect-ratio: 868 / 1920; padding: 14px;
+  border-radius: 60px; background: #121212;
+  box-shadow: inset 0 0 0 2px #2c2c2c, 0 34px 70px -28px rgba(0, 0, 0, .55);
+}
+.demo-phone video { width: 100%; height: 100%; display: block; object-fit: cover; border-radius: 46px; background: #000; }
+/* the demo section runs tight: only a slim band above and below */
+#demo { padding-block: clamp(28px, 3.5vw, 48px); }
+#demo .section-head { margin-bottom: clamp(20px, 2.5vw, 32px); }
+
+.demo-note {
+  margin: 12px 0 0; max-width: 60ch; font-family: Mukta, system-ui, sans-serif;
+  font-size: 13.5px; line-height: 1.5; color: var(--ground); opacity: .8;
+}
+
+/* Mantine Timeline, themed: it spans the phone's full height, each segment
+   fills in green from the video clock (--seg, set per frame), and the
+   step text uses the brand display face */
+.demo-timeline-wrap { display: flex; padding-block: clamp(12px, 3vh, 40px); }
+.demo-timeline.demo-timeline { flex: 1; display: flex; flex-direction: column; }
+.demo-timeline .demo-tl-item { margin-top: 0; flex: 1 1 0; min-height: 0; color: var(--ground); }
+.demo-timeline .demo-tl-item:last-of-type { flex: 0 0 auto; }
+.demo-timeline .demo-tl-item::before {
+  bottom: 0; width: var(--tl-line-width); border-inline-start: 0;
+  background: linear-gradient(to bottom, var(--primary) calc(var(--seg, 0) * 100%), rgba(245, 243, 235, .32) 0);
+}
+/* dimming applies to the words only, so the line and bullets stay solid green */
+.demo-timeline .demo-tl-title,
+.demo-timeline .demo-tl-time { transition: opacity .35s ease; }
+.demo-timeline .demo-tl-item .demo-tl-title { opacity: .45; }
+.demo-timeline .demo-tl-item.is-done .demo-tl-title { opacity: .62; }
+.demo-timeline .demo-tl-item.is-active .demo-tl-title,
+.demo-timeline .demo-tl-item.is-dridh.is-reached .demo-tl-title { opacity: 1; }
+.demo-timeline .demo-tl-bullet {
+  background: var(--secondary); border-color: rgba(245, 243, 235, .65);
+  transition: background-color .3s ease, border-color .3s ease;
+}
+.demo-timeline .demo-tl-bullet[data-active] { background: var(--primary); border-color: var(--primary); }
+.demo-timeline .demo-tl-title {
+  margin-top: -6px; margin-bottom: 4px; padding-left: 14px;
+  font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(24px, 2.5vw, 34px);
+  font-weight: 500; line-height: 1.12; color: var(--ground);
+}
+.demo-timeline .demo-tl-item.is-active .demo-tl-title { font-weight: 700; }
+/* the Dridh step: the whole line turns green once reached, and stays */
+.demo-timeline .demo-tl-item.is-dridh.is-reached .demo-tl-title { color: var(--primary); font-weight: 700; }
+@media (max-width: 900px) {
+  .demo-layout { grid-template-columns: minmax(0, 1fr); }
+  .demo-timeline .demo-tl-item { flex: none; padding-bottom: 28px; }
+}
 
 /* ---------- coming-soon placeholder (light) --------------------------------- */
 .soon-box {
