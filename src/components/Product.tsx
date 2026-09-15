@@ -51,12 +51,7 @@ export default function Product() {
               see the day&apos;s occupancy and revenue on my phone without calling anybody. My team
               gives time to guests now, not to registers.
             </p>
-            <p>
-              What I did not expect was Ahaana. She is the AI calling agent they put on our main
-              Osho Himalayas number, and she picks up when our sales team is off. Someone calling
-              late night from Europe now gets proper answers about rooms and programmes, and those
-              enquiries are not lost anymore.
-            </p>
+          
             <p>
               What I like most about this team is their hunger. They work fast but the work is never
               shoddy. You tell them a problem in the morning, by evening they are already showing
