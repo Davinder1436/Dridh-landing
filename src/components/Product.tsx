@@ -60,7 +60,7 @@ export default function Product() {
             <span className="dash" aria-hidden="true" />
             <div>
               <strong>Rajiv Arora</strong>
-              Founder, Osho Himalayas
+
             </div>
           </div>
         </div>
