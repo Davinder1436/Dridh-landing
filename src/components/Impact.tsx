@@ -27,8 +27,6 @@ const TRIGGERS = [
 
 import EraBackdrop from '../era/EraBackdrop'
 
-const WORDS = ['Business', 'Hotel', 'Retreat', 'Resort', 'Ashram', 'Yoga Centre']
-
 export default function Impact() {
   return (
       <section id="shift" className="section-rule">
@@ -37,17 +35,7 @@ export default function Impact() {
         <div className="wrap">
           <div className="section-head">
             <span className="kicker">The shift</span>
-            <h2 className="shift-title">
-              How the AI era will change your{' '}
-              <span className="spin-words" aria-hidden="true">
-                <span className="spin-track">
-                  {[...WORDS, WORDS[0]].map((w, i) => (
-                    <span key={i}>{w}</span>
-                  ))}
-                </span>
-              </span>
-              <span className="sr-only">Business</span>
-            </h2>
+            <h2 className="shift-title">What the AI era is changing</h2>
           </div>
 
           <div className="triggers">

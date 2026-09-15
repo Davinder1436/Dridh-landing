@@ -176,9 +176,13 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 
 /* ---------- hero ------------------------------------------------------- */
 .hero { padding-top: calc(var(--header-h) + clamp(12px, 2vw, 28px)); padding-bottom: clamp(28px, 4vh, 48px); }
-.hero h1 { max-width: 34ch; font-size: clamp(40px, 5.3vw, 76px); }
+.hero h1 { font-size: clamp(42px, 6.6vw, 100px); line-height: 1; color: #3A2619; }
+.hero h1 .hl { color: var(--secondary); }
 .hero h1 .accent { color: var(--secondary); font-style: italic; }
-.hero .lede { margin-top: 16px; font-size: clamp(18px, 1.7vw, 21px); max-width: 62ch; }
+/* the rotating copper phrase takes the headline's middle line on its own,
+   so each phrase stays centred whatever its length */
+.hero h1 .spin-words { display: block; color: var(--primary); }
+.hero .lede { margin: 26px auto 0; font-size: clamp(18px, 1.9vw, 24px); max-width: 60ch; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
 
 
@@ -193,15 +197,15 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 }
 @media (max-width: 520px) { .signals { grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; } }
 
-/* hero fits one screen: content stacks top-down, the grid sits at the bottom,
-   and everything is a touch tighter so 3 rows fit on a laptop display */
+/* hero fills one screen: kicker, headline and lede sit centred in the space
+   above, and the four facts run along the bottom edge */
 .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
 .hero .wrap { width: 100%; flex: 1; display: flex; flex-direction: column; }
+.hero-center {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding-block: clamp(16px, 3vh, 40px);
+}
 .hero .signals { margin-top: 0; }
-/* hero text and grid sit ~50px left of the page column; only where the side
-   margin is wide enough, so smaller screens keep their gutter */
-@media (min-width: 1200px) { .hero .wrap { left: -50px; } }
-.hero .lede { margin-bottom: 45px; }
 .hero .signal { padding: 14px 18px; }
 .hero .signal b { font-size: clamp(28px, 2.6vw, 34px); }
 .hero .signal span { margin-top: 6px; font-size: 13.5px; line-height: 1.45; }
@@ -581,10 +585,10 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .hero { position: relative; }
 .hero .wrap { position: relative; z-index: 1; }
 .era-hero {
-  right: 2%; width: var(--era-xl);
-  bottom: 10%;
+  right: 2%; width: var(--era-l);
+  bottom: 0;
 }
-@media (max-width: 1000px) { .era-hero { right: 2%; width: 54%; } }
+@media (max-width: 1000px) { .era-hero { width: 40%; } }
 
 /* fold-1 corner piece: camel at the top left, clear of the header */
 .era-hero-camel {
