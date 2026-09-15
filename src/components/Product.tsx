@@ -38,13 +38,29 @@ export default function Product() {
           <span className="kicker">Founder, Osho Himalayas</span>
           <blockquote>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              When we started with Dridh in January 2026, honestly I was worried. Season was coming
+              and years of our bookings were sitting in old software and Excel sheets. The team said
+              give us one month. They sat with our front desk, shifted everything part by part, and
+              from February we were running fully on the new system. Not one day we had to stop
+              taking bookings.
             </p>
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur, excepteur sint occaecat cupidatat non proident.
+              After that it has only kept getting better. Every few weeks something new comes, many
+              times a thing our staff asked for just the week before. Payments now match without
+              the evening headache, check-in paperwork is done before the guest even reaches, and I
+              see the day&apos;s occupancy and revenue on my phone without calling anybody. My team
+              gives time to guests now, not to registers.
+            </p>
+            <p>
+              What I did not expect was Ahaana. She is the AI calling agent they put on our main
+              Osho Himalayas number, and she picks up when our sales team is off. Someone calling
+              late night from Europe now gets proper answers about rooms and programmes, and those
+              enquiries are not lost anymore.
+            </p>
+            <p>
+              What I like most about this team is their hunger. They work fast but the work is never
+              shoddy. You tell them a problem in the morning, by evening they are already showing
+              you something.
             </p>
           </blockquote>
           <div className="review-by">
