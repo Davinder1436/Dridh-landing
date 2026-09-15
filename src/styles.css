@@ -175,10 +175,10 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .btn-ghost-dark:hover { border-color: var(--ivory); color: #fff; }
 
 /* ---------- hero ------------------------------------------------------- */
-.hero { padding-top: calc(var(--header-h) + clamp(24px, 3.4vw, 48px)); padding-bottom: clamp(72px, 10vw, 150px); }
-.hero h1 { max-width: 34ch; font-size: clamp(38px, 5.4vw, 70px); }
+.hero { padding-top: calc(var(--header-h) + clamp(12px, 2vw, 28px)); padding-bottom: clamp(28px, 4vh, 48px); }
+.hero h1 { max-width: 34ch; font-size: clamp(40px, 5.3vw, 76px); }
 .hero h1 .accent { color: var(--secondary); font-style: italic; }
-.hero .lede { margin-top: 30px; font-size: clamp(18px, 1.85vw, 22px); max-width: 62ch; }
+.hero .lede { margin-top: 16px; font-size: clamp(18px, 1.7vw, 21px); max-width: 62ch; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
 
 
@@ -187,8 +187,25 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .signals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 1fr;
   gap: 1px; padding: 1px; margin-top: 64px; }
 .signal { background: rgba(245, 243, 235, .78); padding: 20px 22px; box-shadow: 0 0 0 1px var(--rule); }
-@media (max-width: 900px) { .signals { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) {
+  .signals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .signal-empty { display: none; }
+}
 @media (max-width: 520px) { .signals { grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; } }
+
+/* hero fits one screen: content stacks top-down, the grid sits at the bottom,
+   and everything is a touch tighter so 3 rows fit on a laptop display */
+.hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
+.hero .wrap { width: 100%; flex: 1; display: flex; flex-direction: column; }
+.hero .signals { margin-top: 0; }
+/* hero text and grid sit ~50px left of the page column; only where the side
+   margin is wide enough, so smaller screens keep their gutter */
+@media (min-width: 1200px) { .hero .wrap { left: -50px; } }
+.hero .lede { margin-bottom: 45px; }
+.hero .signal { padding: 14px 18px; }
+.hero .signal b { font-size: clamp(28px, 2.6vw, 34px); }
+.hero .signal span { margin-top: 6px; font-size: 13.5px; line-height: 1.45; }
+.hero .signal i { margin-top: 6px; }
 .signal b {
   display: block; font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 40px; line-height: 1; color: var(--primary); font-weight: 600;
@@ -563,7 +580,7 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .hero .wrap { position: relative; z-index: 1; }
 .era-hero {
   right: 2%; width: var(--era-xl);
-  bottom: 0;
+  bottom: 10%;
 }
 @media (max-width: 1000px) { .era-hero { right: 2%; width: 54%; } }
 
