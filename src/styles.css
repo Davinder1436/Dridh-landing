@@ -370,7 +370,7 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 @media (max-width: 700px)  { .era-soon-hotel { display: none; } }
 
 /* ---------- automation backdrops (fold 3) -------------------------------- */
-#automation { position: relative; min-height: 100vh; }
+#automation { position: relative; }
 #automation .wrap { position: relative; z-index: 1; }
 /* down the scroll: beach (small-medium) right, butler (medium) left, burj (large) right;
    burj is portrait, so its width is scaled to keep its long side "large" */
@@ -682,7 +682,7 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 
 /* ---------- agentic management (section 4) --------------------------------- */
 /* content holds the left; the right edge stays clear for the burj backdrop */
-.auto-list, .auto-answer { max-width: 860px; }
+.auto-list { max-width: 860px; }
 .auto-list { list-style: none; padding: 0; margin-top: 0; margin-bottom: 0; border-top: 1px solid var(--rule-strong); }
 .auto-row {
   display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 20px;
@@ -694,22 +694,6 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 }
 .auto-row h3 { margin-bottom: 6px; }
 .auto-row p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-soft); }
-.auto-answer {
-  margin-top: clamp(56px, 7vw, 96px); padding: clamp(28px, 4vw, 48px);
-  background: var(--primary); color: var(--ground);
-}
-.auto-answer .kicker { color: var(--sand); }
-.auto-answer h3 { color: var(--ground); max-width: 24ch; }
-.auto-answer ul {
-  list-style: none; padding: 0; margin: clamp(26px, 3vw, 36px) 0 0;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr)); gap: 24px;
-}
-.auto-answer li { border-top: 1px solid rgba(245, 243, 235, .28); padding-top: 14px; }
-.auto-answer strong {
-  display: block; font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 22px; font-weight: 600; line-height: 1.2; color: var(--ground);
-}
-.auto-answer span { display: block; margin-top: 6px; font-size: 14.5px; line-height: 1.55; color: var(--ground); opacity: .82; }
 @media (max-width: 700px) { .auto-row { grid-template-columns: 1fr; gap: 4px; } .auto-row .idx { padding-top: 0; } }
 
 /* ---------- product on ground -------------------------------------------- */

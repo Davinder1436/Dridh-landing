@@ -27,13 +27,6 @@ const TODAY = [
   },
 ]
 
-const AGENTIC = [
-  { h: 'Say it in plain words', p: 'Type the job the way you’d tell a colleague.' },
-  { h: 'It does the legwork', p: 'Finds the rooms, checks the rules, prepares every step.' },
-  { h: 'You approve once', p: 'Nothing changes until someone on your team says yes.' },
-  { h: 'Undo in one tap', p: 'Every action is recorded and can be taken back.' },
-]
-
 export default function Automation() {
   return (
     <section id="automation" className="section-rule">
@@ -57,19 +50,6 @@ export default function Automation() {
             </li>
           ))}
         </ol>
-
-        <div className="auto-answer">
-          <span className="kicker">The agentic way</span>
-          <h3>An hour at the desk becomes a five-minute conversation</h3>
-          <ul>
-            {AGENTIC.map((a) => (
-              <li key={a.h}>
-                <strong>{a.h}</strong>
-                <span>{a.p}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
   )
