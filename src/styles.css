@@ -386,6 +386,8 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .era-product-vr      { left: 2%; top: 2%; width: var(--era-l); }
 .era-product-machine { right: 2%; top: 32%; width: var(--era-m); }
 .era-product-robo    { left: 1%; top: 58%; width: calc(var(--era-m) * .79); }
+/* smartbot (large) closes the reading section at the bottom left */
+.era-reading-smartbot { left: 2%; bottom: 2%; width: var(--era-l); }
 /* ... and the front desk (extra large) closes the story on the right,
    in the reading section's heading band */
 .era-reading-desk    { right: 2%; top: 0; width: var(--era-xl); }

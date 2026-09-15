@@ -15,6 +15,7 @@ export default function ReadingOverview() {
   return (
     <section id="reading" className="section-rule">
       <EraBackdrop src="era/fold4/frontdesk.svg" className="era-reading-desk" aspect="100.12 / 76.1" opacity={0.12} />
+      <EraBackdrop src="era/fold4/smartbot.svg" className="era-reading-smartbot" aspect="195.83 / 192.95" />
       <div className="wrap">
         <div className="section-head">
           <span className="kicker">Reading</span>

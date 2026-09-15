@@ -14,8 +14,7 @@ export default function Product() {
     <section id="product" className="product product-ground section-rule">
       <EraBackdrop src="era/fold4/VR.svg" className="era-product-vr" aspect="182.86 / 123.47" />
       <EraBackdrop src="era/fold4/machine%20inteligence.svg" className="era-product-machine" aspect="172.45 / 128.42" />
-      <EraBackdrop src="era/fold4/robohelp.svg" className="era-product-robo" aspect="78.42 / 98.87" />
-      <div className="wrap">
+      <EraBackdrop src="era/fold4/robohelp.svg" className="era-product-robo" aspect="78.42 / 98.87" />      <div className="wrap">
         <div className="section-head">
           <span className="kicker">Dridh PMS · Version 1</span>
           <h2>An agentic PMS, already running a real property</h2>
