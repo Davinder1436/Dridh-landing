@@ -3,7 +3,7 @@ import EraBackdrop from '../era/EraBackdrop'
 /* `hl` is the hook inside `t`, shown in copper */
 type Signal = { n: string; t: string; hl: string; s: string }
 
-/* one row of four facts along the bottom of the hero */
+/* one row of four facts under the headline */
 const SIGNALS: Signal[] = [
   { n: '16%', t: 'of hotels appear in AI search results at all', hl: 'AI search results', s: 'HotelWorld AI index' },
   { n: '68%', t: 'of Indian travellers intend to use AI to plan their next trip', hl: 'AI to plan', s: 'Agoda, 2026' },
@@ -11,7 +11,7 @@ const SIGNALS: Signal[] = [
   { n: '5×', t: 'the conversion rate of an AI-referred visitor against ordinary search', hl: 'AI-referred visitor', s: 'Similarweb-derived' },
 ]
 
-/* rotates in copper on the headline's middle line; six entries match the
+/* rotates on the headline's middle line; six entries match the
    wordspin keyframes in styles.css */
 const KINDS = ['hospitality business', 'wellness retreat', 'luxury hotel', 'yoga ashram', 'spa resort', 'boutique homestay']
 
@@ -35,23 +35,20 @@ export default function Hero() {
             <span className="sr-only">hospitality business</span>
             needs to harness the <span className="hl">AI Era</span>
           </h1>
-          <p className="lede">
-            Your guests are asking ChatGPT where to stay. Are you available there? Don&apos;t worry, we can make you.
-          </p>
-        </div>
 
-        <div className="signals">
-          {SIGNALS.map((s) => (
-            <div className="signal" key={s.n}>
-              <b>{s.n}</b>
-              <span>
-                {s.t.split(s.hl)[0]}
-                <em>{s.hl}</em>
-                {s.t.split(s.hl).slice(1).join(s.hl)}
-              </span>
-              <i>{s.s}</i>
-            </div>
-          ))}
+          <div className="signals">
+            {SIGNALS.map((s) => (
+              <div className="signal" key={s.n}>
+                <b>{s.n}</b>
+                <span>
+                  {s.t.split(s.hl)[0]}
+                  <em>{s.hl}</em>
+                  {s.t.split(s.hl).slice(1).join(s.hl)}
+                </span>
+                <i>{s.s}</i>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
