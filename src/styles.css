@@ -679,11 +679,25 @@ section { padding-block: clamp(64px, 9vw, 132px); }
   font-size: clamp(26px, 3vw, 36px); font-weight: 500; color: var(--ground);
 }
 .demo-frame span { display: block; margin-top: 8px; font-size: 15px; color: var(--ground); opacity: .75; }
+/* the same frame, holding a real recording: soft edges, and an ambient
+   glow behind it carrying the picture's own colours */
+.demo-stage { position: relative; }
+.demo-glow {
+  position: absolute; inset: -4% -3%; width: 106%; height: 108%;
+  filter: blur(46px) saturate(1.5); opacity: .7; transform: translateZ(0);
+  pointer-events: none; border-radius: 40px;
+}
+.demo-frame-video {
+  position: relative; padding: 0; overflow: hidden;
+  border: 0; border-radius: 10px; background: rgba(0, 0, 0, .18);
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, .55), 0 0 0 1px rgba(245, 243, 235, .16);
+}
+.demo-frame-video video { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 10px; }
 
 /* ChatGPT walkthrough: phone on the left, synced steps on the right */
 .demo-layout {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(32px, 6vw, 96px); align-items: stretch;
+  gap: clamp(24px, 4.5vw, 72px); align-items: stretch;
 }
 .demo-phone-wrap { display: flex; justify-content: center; }
 .demo-phone {
