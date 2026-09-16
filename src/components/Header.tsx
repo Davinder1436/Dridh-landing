@@ -4,8 +4,9 @@ import { SITE } from '../config'
 import BookButton from './BookButton'
 
 const NAV = [
-  { to: '/#shift', label: 'The shift' },
-  { to: '/#offer', label: 'What we do' },
+  { to: '/#demo', label: 'Live demo' },
+  { to: '/#intelligence', label: 'Intelligence' },
+  { to: '/#guest-ai', label: 'Guest AI' },
   { to: '/#product', label: 'Dridh PMS' },
   { to: '/#contact', label: 'Contact' },
 ]

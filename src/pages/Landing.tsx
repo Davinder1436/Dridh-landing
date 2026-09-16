@@ -1,10 +1,11 @@
 import Hero from '../components/Hero'
-import Impact from '../components/Impact'
 import LiveDemo from '../components/LiveDemo'
-import AiSystems from '../components/AiSystems'
-import ReadingOverview from '../components/ReadingOverview'
 import Automation from '../components/Automation'
+import CentralIntelligence from '../components/CentralIntelligence'
+import AiSystems from '../components/AiSystems'
+import GuestComms from '../components/GuestComms'
 import Product from '../components/Product'
+import ReadingOverview from '../components/ReadingOverview'
 import Contact from '../components/Contact'
 
 export default function Landing() {
@@ -12,9 +13,10 @@ export default function Landing() {
     <main>
       <Hero />
       <LiveDemo />
-      <Impact />
       <Automation />
+      <CentralIntelligence />
       <AiSystems />
+      <GuestComms />
       <Product />
       <ReadingOverview />
       <Contact />

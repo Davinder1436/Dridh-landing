@@ -12,8 +12,6 @@ const CAPABILITIES = [
 export default function Product() {
   return (
     <section id="product" className="product product-ground section-rule">
-      <EraBackdrop src="era/fold4/VR.svg" className="era-product-vr" aspect="182.86 / 123.47" />
-      <EraBackdrop src="era/fold4/machine%20inteligence.svg" className="era-product-machine" aspect="172.45 / 128.42" />
       <EraBackdrop src="era/fold4/robohelp.svg" className="era-product-robo" aspect="78.42 / 98.87" />      <div className="wrap">
         <div className="section-head">
           <span className="kicker">Dridh PMS · Version 1</span>
@@ -33,7 +31,6 @@ export default function Product() {
         </div>
 
         <div className="review">
-          <span className="kicker">Founder, Osho Himalayas</span>
           <blockquote>
             <p>
               I was honestly worried when we first started with Dridh in Jan&apos;26. It was a risk

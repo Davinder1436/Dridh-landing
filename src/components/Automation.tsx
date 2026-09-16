@@ -30,9 +30,8 @@ const TODAY = [
 export default function Automation() {
   return (
     <section id="automation" className="section-rule">
-      <EraBackdrop src="era/fold3/beach-fold3.svg" className="era-auto-beach" aspect="528.99 / 446.04" />
-      <EraBackdrop src="era/fold3/butler-fold3.svg" className="era-auto-butler" aspect="406.04 / 412.35" />
-      <EraBackdrop src="era/fold3/burj-fold3.svg" className="era-auto-burj" aspect="287.49 / 405.18" />
+      <EraBackdrop src="era/fold2/train-fold2.svg" className="era-auto-train" aspect="86.86 / 73.01" opacity={0.16} />
+      <EraBackdrop src="era/fold2/hotel-fold2.svg" className="era-auto-hotel" aspect="715.95 / 435.37" />
       <div className="wrap">
         <div className="section-head">
           <span className="kicker">Agentic management</span>
