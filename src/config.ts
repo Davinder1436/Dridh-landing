@@ -16,8 +16,9 @@ export const SITE = {
    *  none     → buttons fall back to a pre-filled email draft
    */
   scheduling: {
-    provider: 'none' as SchedulerProvider,
-    url: '',
+    provider: 'google' as SchedulerProvider,
+    /* Google appointment schedule, embeddable form (?gv=true) */
+    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3kWrhOuziZKttAxkk_VEEuEcqrdCNHcGIoN2ExZkK4nFcQEk4_ta17e12JPLBLbSX0Lla-qs_Q?gv=true',
   },
 
   /** Used by the built-in date + slot picker when no external scheduler is set. */
