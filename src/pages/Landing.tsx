@@ -11,8 +11,8 @@ export default function Landing() {
   return (
     <main>
       <Hero />
-      <Impact />
       <LiveDemo />
+      <Impact />
       <Automation />
       <AiSystems />
       <Product />
