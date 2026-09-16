@@ -41,15 +41,15 @@ function segmentAt(i: number, t: number) {
 export default function LiveDemo() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
+  const replayRef = useRef(0)
+  const waitingRef = useRef(false)
   const [step, setStep] = useState(0)
 
   useEffect(() => {
     const v = videoRef.current
     if (!v) return
     let raf = 0
-    let replay = 0
     let visible = false
-    let waiting = false
 
     // read the video clock every frame so the line never drifts from the picture
     const tick = () => {
@@ -64,9 +64,9 @@ export default function LiveDemo() {
 
     // hold the finished state for 5s, then run video and steps again from 0
     const onEnded = () => {
-      waiting = true
-      replay = window.setTimeout(() => {
-        waiting = false
+      waitingRef.current = true
+      replayRef.current = window.setTimeout(() => {
+        waitingRef.current = false
         v.currentTime = 0
         if (visible) v.play().catch(() => {})
       }, REPLAY_PAUSE_MS)
@@ -77,7 +77,7 @@ export default function LiveDemo() {
     const io = new IntersectionObserver(
       ([entry]) => {
         visible = entry.isIntersecting
-        if (visible && !waiting) v.play().catch(() => {})
+        if (visible && !waitingRef.current) v.play().catch(() => {})
         else if (!visible) v.pause()
       },
       { threshold: 0.35 },
@@ -86,11 +86,21 @@ export default function LiveDemo() {
 
     return () => {
       cancelAnimationFrame(raf)
-      clearTimeout(replay)
+      clearTimeout(replayRef.current)
       v.removeEventListener('ended', onEnded)
       io.disconnect()
     }
   }, [])
+
+  /** clicking a step runs the video from that checkpoint */
+  const seek = (at: number) => {
+    const v = videoRef.current
+    if (!v) return
+    clearTimeout(replayRef.current)
+    waitingRef.current = false
+    v.currentTime = at
+    v.play().catch(() => {})
+  }
 
   return (
     <section id="demo" className="demo-band">
@@ -146,6 +156,16 @@ export default function LiveDemo() {
                       s.dridh && 'is-dridh',
                     ].filter(Boolean).join(' ')}
                     title={s.label}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Play from ${s.label}`}
+                    onClick={() => seek(s.at)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        seek(s.at)
+                      }
+                    }}
                   />
                 ))}
               </Timeline>

@@ -705,6 +705,10 @@ section { padding-block: clamp(64px, 9vw, 132px); }
 .demo-timeline.demo-timeline { flex: 1; display: flex; flex-direction: column; }
 .demo-timeline .demo-tl-item { margin-top: 0; flex: 1 1 0; min-height: 0; color: var(--ground); }
 .demo-timeline .demo-tl-item:last-of-type { flex: 0 0 auto; }
+/* every step is clickable: it runs the video from that checkpoint */
+.demo-timeline .demo-tl-item { cursor: pointer; }
+.demo-timeline .demo-tl-item:focus-visible { outline: 2px solid var(--ground); outline-offset: 4px; }
+.demo-timeline .demo-tl-item:hover .demo-tl-title { opacity: 1; }
 .demo-timeline .demo-tl-item::before {
   bottom: 0; width: var(--tl-line-width); border-inline-start: 0;
   background: linear-gradient(to bottom, var(--primary) calc(var(--seg, 0) * 100%), rgba(245, 243, 235, .32) 0);
